@@ -20,14 +20,14 @@ scotchApp.config(function($routeProvider) {
             controller  : 'aboutController'
         })
 
-        // route for the contact page
+        // route for the registers page
         .when('/registers', {
-            templateUrl : 'pages/contact/contact.html',
+            templateUrl : 'pages/registers/contact.html',
             controller  : 'contactController'
         })
 
         .when('/config', {
-            templateUrl : 'pages/contact.html',
+            templateUrl : 'pages/registers.html',
             controller  : 'contactController'
         });
 });
