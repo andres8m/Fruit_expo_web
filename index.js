@@ -33,7 +33,26 @@ scotchApp.config(function($routeProvider) {
 });
 
 
+scotchApp.controller('NavCtrl',
+    ['$scope', '$location', function ($scope, $location) {
+        $scope.navClass = function (page) {
+            var currentRoute = $location.path().substring(1) || 'home';
+            return page === currentRoute ? 'active' : '';
+        };
 
+        $scope.loadHome = function () {
+            $location.url('/');
+        };
+
+        $scope.loadAbout = function () {
+            $location.url('/roles');
+        };
+
+        $scope.loadContact = function () {
+            $location.url('/registers');
+        };
+
+    }]);
 
 
 
@@ -51,7 +70,7 @@ scotchApp.config(function($routeProvider) {
 // scotchApp.controller('aboutController', function($scope) {
 //     $scope.message = 'Look! I am an about page.';
 // });
-
-scotchApp.controller('contactController', function($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-});
+//
+// scotchApp.controller('contactController', function($scope) {
+//     $scope.message = 'Contact us! JK. This is just a demo.';
+// });
