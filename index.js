@@ -41,6 +41,12 @@ scotchApp.config(function($routeProvider) {
             controller  : 'newLoadController'
         })
 
+        .when('/registers/record', {
+            templateUrl : 'pages/registers/record/record.html',
+            controller  : 'recordController'
+        })
+
+
 
 
 

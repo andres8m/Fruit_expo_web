@@ -11,6 +11,10 @@ angular.module('scotchApp')
             $location.url('registers/newload');
         };
 
+        $scope.loadRecords = function () {
+            $location.url('registers/record');
+        };
+
 
 
 
