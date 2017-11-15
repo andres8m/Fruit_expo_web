@@ -15,6 +15,9 @@ angular.module('scotchApp')
             $location.url('registers/record');
         };
 
+        $scope.loadDischargeRecord = function () {
+            $location.url('registers/dischargerecord');
+        }
 
 
 
