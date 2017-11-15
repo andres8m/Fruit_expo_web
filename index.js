@@ -57,7 +57,7 @@ scotchApp.config(function($routeProvider) {
 scotchApp.controller('NavCtrl',
     ['$scope', '$location','$http','$rootScope', function ($scope, $location,$http,$rootScope) {
 
-
+        $http.defaults.headers.common.Authorization = "Bearer "+ localStorage.getItem("token");
 
         $scope.navClass = function (page) {
             var currentRoute = $location.path().substring(1) || 'home';

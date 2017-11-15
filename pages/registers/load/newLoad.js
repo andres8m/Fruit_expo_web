@@ -3,11 +3,8 @@ angular.module('scotchApp')
         // create a message to display in our view
         $scope.message = 'Everyone come and see how good I look!';
         $rootScope.allow = true;
-        $scope.select={};
-        // $scope.select = {
-        //     value: "Option1",
-        //     choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
-        // };
+        $scope.load={};
+        $scope.openModal=false;
 
         $scope.getEmployees = function () {
 
@@ -24,6 +21,28 @@ angular.module('scotchApp')
         };
 
         $scope.getEmployees();
+
+        $scope.createLoad = function () {
+
+            $http.post("http://localhost:8080/api/inventory/load", $scope.load)
+                .then(function (response) {
+                    // alert(response);
+                    $scope.response=response.data.data;
+                    $scope.openModal = true;
+
+                }, function (error) {
+                    alert(error);
+                    // console.log("Error");
+                });
+        };
+
+        $scope.getBack = function () {
+            $scope.openModal = false;
+            $location.url('registers');
+        };
+
+
+
 
 
     });

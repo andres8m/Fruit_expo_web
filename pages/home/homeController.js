@@ -13,7 +13,11 @@ angular.module('scotchApp')
                     function(response)
                     {
                         // console.log($scope.trialCompany);
-                        $http.defaults.headers.common.Authorization = "Bearer "+ response.data.data.token;
+                        var token = response.data.data.token;
+                        localStorage.setItem("token", token);
+
+
+                        $http.defaults.headers.common.Authorization = "Bearer "+ localStorage.getItem("token");
                         $scope.succesfulRegister = true;
                         $rootScope.allow = true;
 
