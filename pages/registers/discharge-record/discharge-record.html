@@ -40,7 +40,7 @@
                 </thead>
 
                 <tbody>
-                <tr ng-repeat="x in allDischarges">
+                <tr ng-repeat="x in allDischarges" style="cursor:pointer" ng-click="getDischargeDetails(x)">
                     <td>{{x.discharge.id}}</td>
                     <td>{{x.employee.name}}</td>
                     <td>{{x.discharge.total}} Q.</td>
@@ -52,4 +52,50 @@
     </div>
 
 
+</div>
+
+
+<div id="demoModal" class="modal">
+    <div class="modal-content">
+        <h4>Detalles de Descargo</h4>
+
+
+
+
+        <div class="container">
+        <table class="responsive-table">
+            <thead>
+            <tr>
+                <!--<th>Codigo de descarga</th>-->
+                <th>Producto</th>
+                <th>Precio </th>
+                <th>Cantidad</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="x in dischargeDetail" >
+                <!--<td>{{x.discharge.id}}</td>-->
+                <td>{{x.product.name}}</td>
+                <td>{{x.productDischarge.price}} Q.</td>
+                <td>{{x.productDischarge.quantity}}</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
+
+
+
+
+
+        <p></p>
+    </div>
+    <div class="modal-footer">
+        <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="getBack()">Aceptar</a>
+    </div>
+</div>
+
+<div class="col">
+    <a class='' data-target='demoModal' modal open="openModal"></a>
 </div>

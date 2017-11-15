@@ -21,6 +21,19 @@ angular.module('scotchApp')
 
         $scope.getDischarges();
 
+        $scope.getDischargeDetails = function (x) {
+
+            var idx = $scope.allDischarges.indexOf(x);
+
+            $http.get("http://localhost:8080/api/inventory/discharge/details/"+$scope.allDischarges[idx].discharge.id)
+                .then(function (response) {
+                    $scope.dischargeDetail = response.data.data;
+                    $scope.openModal=true;
+                }, function (error) {
+                    // console.log("Error");
+                });
+        };
+
 
 
 
