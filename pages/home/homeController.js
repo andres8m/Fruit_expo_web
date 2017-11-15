@@ -13,8 +13,11 @@ angular.module('scotchApp')
                     function(response)
                     {
                         // console.log($scope.trialCompany);
+                        $http.defaults.headers.common.Authorization = "Bearer "+ response.data.data.token;
                         $scope.succesfulRegister = true;
                         $rootScope.allow = true;
+
+
                         // alert("se inicio");
                         $location.path( '/roles' );
 

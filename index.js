@@ -19,7 +19,7 @@ scotchApp.config(function($routeProvider) {
 
         // route for the users page
         .when('/roles', {
-            templateUrl : 'pages/users/about.html',
+            templateUrl : 'pages/users/users.html',
             controller  : 'aboutController'
         })
 
@@ -32,7 +32,7 @@ scotchApp.config(function($routeProvider) {
 
         // route for the registers page
         .when('/registers', {
-            templateUrl : 'pages/registers/contact.html',
+            templateUrl : 'pages/registers/registers.html',
             controller  : 'contactController'
         })
 
@@ -57,10 +57,7 @@ scotchApp.config(function($routeProvider) {
 scotchApp.controller('NavCtrl',
     ['$scope', '$location','$http','$rootScope', function ($scope, $location,$http,$rootScope) {
 
-        $rootScope.myToken ={};
 
-        $rootScope.myToken.token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.Eh4oTWwYO1XUm1HxWcXp1szp-Udl7OHfaRHXpihAEH3k8Oc8VtUpxb3UH5jF8YHLwO7slYQUj4Bv2WgWu42-UQ";
-        $http.defaults.headers.common.Authorization = 'Bearer ' + $rootScope.myToken.token;
 
         $scope.navClass = function (page) {
             var currentRoute = $location.path().substring(1) || 'home';
