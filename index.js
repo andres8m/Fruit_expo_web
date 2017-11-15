@@ -61,6 +61,11 @@ scotchApp.config(function($routeProvider) {
             controller  : 'dischargeController'
         })
 
+        .when('/registers/sales', {
+            templateUrl : 'pages/registers/sales/sales.html',
+            controller  : 'salesController'
+        })
+
 
 
 
