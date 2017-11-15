@@ -1,0 +1,49 @@
+<div>
+    <br>
+    <div class="row">
+
+        <div class="col m3">
+
+        </div>
+
+        <div class="col m6">
+            <div class="card-panel">
+
+                <h1 class="header center  text-lighten-2">Registro de Usuarios</h1>
+
+                <div class="center">
+                    <h5 class="header light">Control de usuarios creados</h5>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col m3">
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <table class="responsive-table">
+            <thead>
+            <tr>
+                <!--<th>Codigo de descarga</th>-->
+                <th>Codigo de usuario</th>
+                <th>Email </th>
+                <th>Fecha de creacion</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="x in allEmployees" >
+                <!--<td>{{x.discharge.id}}</td>-->
+                <td>{{x.id}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.createdAt | date:"dd/MM/yyyy 'a las' h:mma"}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

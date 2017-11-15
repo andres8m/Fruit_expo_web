@@ -23,6 +23,11 @@ scotchApp.config(function($routeProvider) {
             controller  : 'aboutController'
         })
 
+        .when('/view', {
+            templateUrl : 'pages/users/view/view.html',
+            controller  : 'userViewController'
+        })
+
 
 
 
