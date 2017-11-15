@@ -9,7 +9,17 @@ angular.module('scotchApp')
         };
 
 
+        $scope.getLoads = function () {
 
+            $http.get("http://localhost:8080/api/inventory/loads")
+                .then(function (response) {
+                    $scope.allLoads = response.data.data;
+                }, function (error) {
+                    // console.log("Error");
+                });
+        };
+
+        $scope.getLoads();
 
 
 
