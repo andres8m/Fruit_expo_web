@@ -25,6 +25,11 @@ angular.module('scotchApp')
 
         $scope.loadSales = function () {
             $location.url('registers/sales');
+        };
+
+
+        $scope.loadNewSale = function () {
+            $location.url('registers/addsales');
         }
 
 

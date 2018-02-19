@@ -66,6 +66,11 @@ scotchApp.config(function($routeProvider) {
             controller  : 'salesController'
         })
 
+        .when('/registers/addsales', {
+            templateUrl : 'pages/registers/add-sale/add-sale.html',
+            controller  : 'addSaleController'
+        })
+
 
 
 

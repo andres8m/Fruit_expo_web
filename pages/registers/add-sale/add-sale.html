@@ -1,0 +1,134 @@
+
+<div class="container">
+    <br>
+    <div class="row">
+
+        <div class="col m1">
+
+        </div>
+
+        <div class="col m10">
+            <div class="card-panel">
+
+                <h1 class="header center  text-lighten-2">Agregar registro de Venta</h1>
+
+                <div class="center">
+                    <!--<h5 class="header light">Añadir registro de descarga</h5>-->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col m1">
+
+        </div>
+
+    </div>
+
+    <br>
+
+
+
+    <div class="row">
+
+        <div class="section col s4">
+            <div input-field>
+                <select ng-model="discharge.employee" material-select>
+                    <option ng-repeat="value in allEmployees" value="{{value.id}}">{{value.name}}</option>
+                </select>
+                <label>Seleccione empleado</label>
+            </div>
+
+            <div class="input-field">
+                <input placeholder="" id="first_name" type="number" class="validate" ng-model="discharge.total" ng-disabled="true">
+                <label for="first_name">Total</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="" id="saldo" type="number" class="validate" ng-model="discharge.saldo" ng-disabled="false">
+                <label for="first_name">Saldo</label>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="input-field">
+                <a class="waves-effect waves-light btn-large" ng-click="createSale()">
+                    <i class="material-icons right">send
+                    </i>
+                    Finalizar</a>
+            </div>
+
+        </div>
+
+        <div class="section col s2">
+
+            <!--<ul class="collection animated fadeIn" ng-show="showProductsList.length>0">-->
+            <!--<li class="collection-item" ng-repeat="x in showProductsList">{{x.name}}</li>-->
+            <!--</ul>-->
+
+        </div>
+
+
+
+        <div class="section col s6">
+            <div class="card-panel">
+
+                <div input-field>
+                    <select ng-model="objProduct.product" material-select>
+                        <option ng-repeat="value in allProducts" value="{{value.id}}">{{value.name}}</option>
+                    </select>
+                    <label>Seleccione Producto a agregar</label>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="" id="cantidad" type="number" class="validate" ng-model="objProduct.quantity">
+                    <label for="first_name">Cantidad</label>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="" id="price" type="number" class="validate" ng-model="objProduct.price">
+                    <label for="first_name">Precio</label>
+                </div>
+
+                <a class="waves-effect waves-light btn" ng-click="addToProducts()">Agregar</a>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <br>
+    <div class="row">
+
+        <div class="section col s3">
+            <!--<h5>You selected: <b>{{select.value}}</b></h5>-->
+        </div>
+
+        <div class="section col s6" align="center">
+
+        </div>
+
+        <div class="section col s3">
+            <!--<h5>You selected: <b>{{select.value}}</b></h5>-->
+        </div>
+    </div>
+
+
+
+</div>
+
+<div id="demoModal" class="modal">
+    <div class="modal-content">
+        <h4>Operación realizada con exito</h4>
+        <p>Se ha completado exitosamente el proceso.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="getBack()">Aceptar</a>
+    </div>
+</div>
+
+<div class="col">
+    <a class='' data-target='demoModal' modal open="openModal"></a>
+</div>
