@@ -1,1 +1,1 @@
-AngularJs + routes + bootstrap
+AngularJs + Material Design + angular routes
